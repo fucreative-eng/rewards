@@ -157,40 +157,23 @@
 
         <p class="footer-text">© 2026 Premium Rewards Inc. Verified Safelink Platform.</p>
     </div>
-<!-- Monetag Desktop + Mobile Smart Script -->
-
-<!--    
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Aapka Monetag Direct Link
-        var adUrl = 'https://omg10.com/4/11869765';
-        
-        // 1. Buttons Par Ad Lagana (Desktop aur Mobile Dono K Liye Best)
-        // Yahan 'a' ka matlab hai aapke page ke saare links/buttons
-        var buttons = document.querySelectorAll('a');
-        buttons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                // Naya tab kholna bina browser blocker ko trigger kiye
-                window.open(adUrl, '_blank');
-            });
-        });
+document.addEventListener("click", function(e) {
+    // Agar user ne kisi asli button (anchor tag) par click kiya hai, toh popunder ko rok do
+    if (e.target.tagName === 'A' || e.target.closest('a')) {
+        return; 
+    }
 
-        // 2. Safe Fallback for Desktop (Poore page par click karne k liye)
-        var hasAdOpened = false;
-        document.body.addEventListener('click', function(e) {
-            // Agar user ne kisi button par click nahi kiya aur page par kahin aur click kiya
-            if (e.target.tagName !== 'A' && !hasAdOpened) {
-                var desktopAd = window.open(adUrl, '_blank');
-                if(desktopAd) {
-                    window.focus(); // Wapas user ka dhyan aapki site par laye
-                    hasAdOpened = true;
-                }
-            }
-        });
-    });
+    // 24-Hour Capping Session (Taake ek user ko baar-baar tang na kare)
+    if (!sessionStorage.getItem('popunder_done')) {
+        // Yahan apna Monetag ya Adsterra ka POPUNDER link dalein
+        var popunderUrl = "https://omg10.com/4/11869765"; 
+        
+        window.open(popunderUrl, "_blank");
+        sessionStorage.setItem('popunder_done', 'true');
+    }
+});
 </script>
-<!-- Monetag Script End -->
--->
 
 </body>
 </html>
