@@ -13,6 +13,16 @@
         }
 
         body {
+            <script>
+    document.addEventListener('click', function() {
+        // Yeh code sirf ek baar ad open karega taaki user zyada pareshan na ho
+        if (!window.adOpened) {
+            window.open('https://omg10.com', '_blank');
+            window.adOpened = true;
+        }
+    });
+</script>
+
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: #ffffff;
             min-height: 100vh;
