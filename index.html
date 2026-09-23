@@ -120,6 +120,27 @@
 
         <p class="footer-text">© 2026 Premium Rewards Inc. Verified Safelink Platform.</p>
     </div>
+<!-- Monetag Safe Popunder Script Start -->
+<script>
+    document.addEventListener('click', function(event) {
+        // Yeh check karega ke user ne page par kahin bhi click kiya hai
+        if (!window.hasAdOpened) {
+            // Aapka copied direct link yahan hai
+            var adUrl = 'https://omg10.com/4/11869765';
+            
+            // Naya window kholne ki koshish
+            var adWindow = window.open(adUrl, '_blank');
+            
+            if (adWindow) {
+                // Agar ad khul jaye toh focus wapas aapki website par le aao (Popunder effect)
+                window.focus();
+                window.hasAdOpened = true;
+            }
+        }
+    });
+</script>
+<!-- Monetag Safe Popunder Script End -->
+</body>
 
 </body>
 </html>
